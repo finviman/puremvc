@@ -1,6 +1,7 @@
 package com.home.web;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,9 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/h/")
 public class DealController {
 
-    @RequestMapping("a")
-    public String map() {
-        log.info("-------------------");
+    @RequestMapping("a/{v}")
+    public String map(@PathVariable int v) {
+        log.info("-------------------"+v);
         return "h/a";
     }
 }
