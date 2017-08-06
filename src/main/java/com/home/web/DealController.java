@@ -42,4 +42,9 @@ public class DealController {
         return "h/b"+v;
     }
 
+    @RequestMapping("json")
+    public String coushu(String jsonStr) {
+        log.info(jsonStr);
+        return jsonStr;
+    }
 }
