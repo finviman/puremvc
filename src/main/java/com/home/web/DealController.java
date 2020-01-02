@@ -1,12 +1,9 @@
 package com.home.web;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by liyang on 10/7/2017.
@@ -47,4 +44,10 @@ public class DealController {
         log.info(jsonStr);
         return jsonStr;
     }
+
+    @RequestMapping("api/{function}")
+    public String fromOutToKelin(@PathVariable("function") String function, @RequestParam Map<String,String> params){
+        return function + "  "+params.get("id");
+    }
+
 }
